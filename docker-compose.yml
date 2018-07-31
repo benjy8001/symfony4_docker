@@ -1,0 +1,25 @@
+version: '3'
+services:
+  application:
+    privileged: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    links:
+      - database
+    container_name: application
+    volumes:
+      - .:/mnt/apps/symfony
+      - /lib/modules:/lib/modules
+    container_name: application
+  database:
+    build:
+      context: .
+      dockerfile: Dockerfile-postgres
+    container_name: database
+    environment:
+      - POSTGRES_DB=symfony_db
+      - POSTGRES_USER=symfony_user
+      - POSTGRES_PASSWORD=symfony_password

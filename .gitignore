@@ -1,0 +1,10 @@
+/www/public/storage
+/www/public/hot
+/www/public/js
+/www/public/css
+/www/public/mix*.js
+/www/public/mix-manifest.json
+/www/public/fonts
+/www/public/img
+/www/vendor
+/www/.env
